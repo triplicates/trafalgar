@@ -2,7 +2,7 @@
 
 ### Description
 
-Trafalgar is my first template with @reacjs library and styled-components. I am practing these technology and for demo using GitHub Pages.
+Trafalgar is my first template with @reactjs library and styled-components. I am practing these technology and for demo using GitHub Pages.
 
 ![Promo Section](./src/assets/git.png)
 
