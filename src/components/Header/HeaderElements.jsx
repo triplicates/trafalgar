@@ -24,6 +24,9 @@ export const Nav = styled.nav`
   @media only screen and (max-width: 768px) {
     display: none;
   }
+  @media only screen and (min-width: 769px) and (max-width: 960px) {
+    display: none;
+  }
 `;
 export const Ul = styled.ul`
   display: flex;

@@ -31,7 +31,7 @@ export const Button = styled(Btn)`
 
 export const Title = styled.h1`
   color: #000000;
-  font-size: 48px;
+  font-size: ${({ primary }) => (primary ? "48px" : "36px")};
   font-family: "Mulish";
   font-weight: bold;
 `;

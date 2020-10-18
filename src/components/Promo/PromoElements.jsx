@@ -2,10 +2,13 @@ import styled from "styled-components";
 import { Wrapper, Subtitle as Sb, Button } from "../Styles/GlobalStyles.jsx";
 
 export const PromoWrapper = styled(Wrapper)`
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media only screen and (max-width: 768px) {
+    height: 400px;
+    position: relative;
+  }
 `;
 
 export const Subtitle = styled(Sb)`
@@ -13,15 +16,26 @@ export const Subtitle = styled(Sb)`
 `;
 
 export const Btn = styled(Button)`
-  margin-top: 20px;
+  margin-top: 45px;
 `;
 
-/*TODO Change !!!! */
-
 export const Text = styled.div`
+  @media only screen and (min-width: 769px) and (max-width: 960px) {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
   @media only screen and (max-width: 768px) {
     position: absolute;
-    top: 20px;
+    bottom: 0;
+    background: linear-gradient(
+      -180deg,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 1) 50%
+    );
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,10 +44,14 @@ export const Text = styled.div`
 `;
 
 export const PromoBg = styled.picture`
+  width: 700px;
   flex-shrink: 0;
   @media only screen and (max-width: 768px) {
+    width: 100%;
     position: absolute;
-    top: 0px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: -1;
   }
 `;

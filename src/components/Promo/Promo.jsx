@@ -12,14 +12,13 @@ import bg from "../../assets/bg.png";
 export default function Promo() {
   return (
     <PromoWrapper>
-      {/*TODO Check it !*/}
       <Text>
-        <Title>Virtual healthcare for you</Title>
+        <Title primary>Virtual healthcare for you</Title>
         <Subtitle>
           Trafalgar provides progressive, and affordable healthcare, accessible
           on mobile and online for everyone
         </Subtitle>
-        <Btn primary>Click</Btn>
+        <Btn primary>Consult today</Btn>
       </Text>
       <PromoBg srcSet={bg}>
         <img src={bg} alt="" />

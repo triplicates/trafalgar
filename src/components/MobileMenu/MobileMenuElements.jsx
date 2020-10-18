@@ -4,7 +4,7 @@ import { Wrapper } from "../Styles/GlobalStyles.jsx";
 export const Menu = styled.div`
   display: ${({ visible }) => (visible ? "flex" : "none")};
   align-items: center;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 1);
   position: fixed;
   z-index: 99999;
   left: 0;
