@@ -10,7 +10,7 @@ Dribbble [Template author](https://dribbble.com/shots/12514026--FIGMA-FREEBIE-La
 
 ### 🕐 Time
 
-See a work [here](https://triplicates.github.io/)
+See a work [here](https://triplicates.github.io/trafalgar/)
 
 Development - **process**
 
