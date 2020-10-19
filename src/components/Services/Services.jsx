@@ -8,6 +8,7 @@ import {
 } from "./ServicesElements.jsx";
 import { Title } from "../Styles/GlobalStyles.jsx";
 import Service from "../Service/Service.jsx";
+import PropTypes from "prop-types";
 
 export default function Services({ data }) {
   return (
@@ -24,6 +25,7 @@ export default function Services({ data }) {
           {data.map((element) => {
             return (
               <Service
+                key={element.id}
                 picture={element.picture}
                 title={element.title}
                 text={element.text}
@@ -36,3 +38,7 @@ export default function Services({ data }) {
     </ServicesSection>
   );
 }
+
+Services.propTypes = {
+  data: PropTypes.array.isRequired,
+};

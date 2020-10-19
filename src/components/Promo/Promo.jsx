@@ -1,28 +1,32 @@
 import React from "react";
 import {
+  Promo as PromoSection,
   PromoWrapper,
   Text,
-  PromoBg,
   Subtitle,
-  Btn,
+  Button,
+  Picture,
 } from "./PromoElements.jsx";
+
 import { Title } from "../Styles/GlobalStyles.jsx";
-import bg from "../../assets/bg.png";
+import picture from "../../assets/bg.png";
 
 export default function Promo() {
   return (
-    <PromoWrapper>
-      <Text>
-        <Title primary>Virtual healthcare for you</Title>
-        <Subtitle>
-          Trafalgar provides progressive, and affordable healthcare, accessible
-          on mobile and online for everyone
-        </Subtitle>
-        <Btn primary>Consult today</Btn>
-      </Text>
-      <PromoBg srcSet={bg}>
-        <img src={bg} alt="" />
-      </PromoBg>
-    </PromoWrapper>
+    <PromoSection>
+      <PromoWrapper>
+        <Text>
+          <Title size="big">Virtual healthcare for you</Title>
+          <Subtitle size="big">
+            Trafalgar provides progressive, and affordable healthcare,
+            accessible on mobile and online for everyone
+          </Subtitle>
+          <Button primary>Consult today</Button>
+        </Text>
+        <Picture>
+          <img src={picture} alt="Background picture" />
+        </Picture>
+      </PromoWrapper>
+    </PromoSection>
   );
 }

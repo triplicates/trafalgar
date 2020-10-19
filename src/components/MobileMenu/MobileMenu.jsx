@@ -8,10 +8,11 @@ import {
 } from "./MobileMenuElements.jsx";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Link } from "../Header/HeaderElements.jsx";
+import PropTypes from "prop-types";
 
-export default function MobileMenu({ visible, showMenu }) {
+export default function MobileMenu({ visible, hundler }) {
   return (
-    <Menu visible={visible} onClick={showMenu}>
+    <Menu visible={visible} onClick={hundler}>
       <MenuWrapper>
         <Router>
           <MenuNav>
@@ -38,3 +39,8 @@ export default function MobileMenu({ visible, showMenu }) {
     </Menu>
   );
 }
+
+MobileMenu.propTypes = {
+  visible: PropTypes.bool,
+  hundler: PropTypes.func.isRequired,
+};

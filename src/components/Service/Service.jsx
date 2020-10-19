@@ -5,7 +5,7 @@ export default function Service({ picture, title, text }) {
   return (
     <Article>
       <Picture srcSet={picture}>
-        <img src={picture} alt="" />
+        <img src={picture} alt="service picture" />
       </Picture>
       <Title>{title}</Title>
       <Subtitle>{text}</Subtitle>

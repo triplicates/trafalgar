@@ -1,9 +1,9 @@
-import React from "react";
 import styled from "styled-components";
 
-const Btn = ({ className, children }) => {
-  return <button className={className}>{children}</button>;
-};
+export const Main = styled.main`
+  width: 100%;
+  min-height: 100%;
+`;
 
 export const Wrapper = styled.div`
   width: 1170px;
@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
   margin: 0 auto;
 `;
 
-export const Button = styled(Btn)`
+export const Button = styled.button`
   font-family: "Mulish";
   font-weight: bold;
   background: ${({ primary }) => (primary ? "#458ff6" : "#fff")};
@@ -31,7 +31,8 @@ export const Button = styled(Btn)`
 
 export const Title = styled.h1`
   color: #000000;
-  font-size: ${({ primary }) => (primary ? "48px" : "36px")};
+  font-size: ${({ size }) =>
+    size === "big" ? "48px" : size === "medium" ? "36px" : "22px"};
   font-family: "Mulish";
   font-weight: bold;
 `;
@@ -39,5 +40,6 @@ export const Title = styled.h1`
 export const Subtitle = styled.p`
   font-weight: 300;
   color: #7d7987;
-  font-size: 21px;
+  font-size: ${({ size }) =>
+    size === "big" ? "22px" : size === "medium" ? "18px" : "16px"};
 `;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Header as Head,
   HeaderContainer,
@@ -11,15 +11,9 @@ import {
 import logo from "../../assets/logo.png";
 import { BrowserRouter as Router } from "react-router-dom";
 import MobileBtn from "../MobileBtn/MobileBtn.jsx";
-import MobileMenu from "../MobileMenu/MobileMenu.jsx";
+import PropTypes from "prop-types";
 
-export default function Header() {
-  let [visible, setVisible] = useState(false);
-
-  const showMenu = () => {
-    setVisible(!visible);
-  };
-
+export default function Header({ isMobile, hundler }) {
   return (
     <>
       <Head>
@@ -76,10 +70,14 @@ export default function Header() {
               </Ul>
             </Nav>
           </Router>
-          <MobileBtn show={showMenu} visible={visible} />
+          {isMobile ? <MobileBtn show={hundler} /> : ""}
         </HeaderContainer>
       </Head>
-      <MobileMenu visible={visible} showMenu={showMenu} />
     </>
   );
 }
+
+Header.propTypes = {
+  isMobile: PropTypes.bool,
+  hundled: PropTypes.func,
+};
