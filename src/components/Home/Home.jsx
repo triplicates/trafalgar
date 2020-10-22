@@ -3,6 +3,7 @@ import Header from "../Header/Header.jsx";
 import Promo from "../Promo/Promo.jsx";
 import MobileMenu from "../MobileMenu/MobileMenu.jsx";
 import Article from "../Article/Article.jsx";
+import Loader from "../Loader/Loader.jsx";
 const Services = React.lazy(() => import("../Services/Services.jsx"));
 
 export default function Home() {
@@ -65,7 +66,7 @@ export default function Home() {
     <>
       <Header isMobile={isMobile} hundler={hundleClick} />
       <Promo />
-      <React.Suspense fallback={/* TODO create <Loader/>*/ <p>Loading</p>}>
+      <React.Suspense fallback={<Loader />}>
         <Services data={services} />
       </React.Suspense>
       <Article />
