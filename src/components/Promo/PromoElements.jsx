@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {
   Wrapper,
   Subtitle as Sb,
-  Button as Bt,
+  CustomLink,
 } from "../Styles/GlobalStyles.jsx";
 
 export const Promo = styled.section`
@@ -58,6 +58,7 @@ export const Subtitle = styled(Sb)`
     font-size: 16px;
   }
 `;
-export const Button = styled(Bt)`
-  margin-top: 30px;
+
+export const PromoLink = styled(CustomLink)`
+  margin-top: 25px;
 `;

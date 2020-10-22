@@ -1,10 +1,11 @@
 import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 import {
   Services as ServicesSection,
   WrapperFlex,
   Subtitle,
   WrapperGrid,
-  ServiceBtn,
+  ServiceLink,
 } from "./ServicesElements.jsx";
 import { Title } from "../Styles/GlobalStyles.jsx";
 import Service from "../Service/Service.jsx";
@@ -33,7 +34,9 @@ export default function Services({ data }) {
             );
           })}
         </WrapperGrid>
-        <ServiceBtn>Learn more</ServiceBtn>
+        <Router>
+          <ServiceLink to="#">Learn more</ServiceLink>
+        </Router>
       </WrapperFlex>
     </ServicesSection>
   );

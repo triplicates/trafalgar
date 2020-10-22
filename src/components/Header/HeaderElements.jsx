@@ -39,11 +39,11 @@ export const Li = styled.li`
 export const Link = styled(Links)`
   font-family: "Mulish";
   font-weight: ${({ primary }) => (primary ? "bold" : "300")};
-  color: #1f1534;
+  color: var(--headerNavColor);
   text-decoration: none;
   font-size: 18px;
   transition: color 0.4s;
   &:hover {
-    color: blue;
+    color: var(--hoverColor);
   }
 `;

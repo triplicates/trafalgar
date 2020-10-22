@@ -1,10 +1,11 @@
 import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 import {
   Promo as PromoSection,
   PromoWrapper,
   Text,
   Subtitle,
-  Button,
+  PromoLink,
   Picture,
 } from "./PromoElements.jsx";
 
@@ -21,7 +22,11 @@ export default function Promo() {
             Trafalgar provides progressive, and affordable healthcare,
             accessible on mobile and online for everyone
           </Subtitle>
-          <Button primary>Consult today</Button>
+          <Router>
+            <PromoLink to="#" primary="true">
+              Consult today
+            </PromoLink>
+          </Router>
         </Text>
         <Picture>
           <img src={picture} alt="Background picture" />
