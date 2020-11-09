@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { Button } from "./MobileBtnElements.jsx";
 import PropTypes from "prop-types";
 
+let propTypes = {
+  show: PropTypes.func.isRequired,
+};
+
 export default function MobileBtn({ show }) {
   return (
     <Button onClick={show}>
@@ -11,6 +15,4 @@ export default function MobileBtn({ show }) {
     </Button>
   );
 }
-MobileBtn.propTypes = {
-  show: PropTypes.func.isRequired,
-};
+MobileBtn.propTypes = propTypes;
