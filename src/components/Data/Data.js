@@ -49,7 +49,7 @@
     btnText: "See more",
     btnLink: "#",
     arrow: false,
-    reverse: false,
+    reverse: true,
   };
  export  const unitSecond = {
     picture: "./assets/second.png",
@@ -59,5 +59,5 @@
     btnText: "Download",
     btnLink: "#",
     arrow: true,
-    reverse: true,
+    reverse: false,
   };
