@@ -32,6 +32,7 @@ export default function Home() {
         <Unit options={unitFirst} />
         <Unit options={unitSecond} />
       </React.Suspense>
+      <CoruselSection />
       {isMobile && menu && <MobileMenu visible={menu} hundler={hundleClick} />}
     </>
   );
