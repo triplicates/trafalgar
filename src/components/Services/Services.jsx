@@ -11,6 +11,10 @@ import { Title } from "../Styles/GlobalStyles.jsx";
 import Service from "../Service/Service.jsx";
 import PropTypes from "prop-types";
 
+let propTypes = {
+  data: PropTypes.array.isRequired,
+};
+
 export default function Services({ data }) {
   return (
     <ServicesSection>
@@ -42,6 +46,4 @@ export default function Services({ data }) {
   );
 }
 
-Services.propTypes = {
-  data: PropTypes.array.isRequired,
-};
+Services.propTypes = propTypes;
