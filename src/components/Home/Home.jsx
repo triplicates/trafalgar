@@ -3,6 +3,7 @@ import Header from "../Header/Header.jsx";
 import MobileMenu from "../MobileMenu/MobileMenu.jsx";
 import Promo from "../Promo/Promo.jsx";
 import Loader from "../Loader/Loader.jsx";
+import CoruselSection from "$components/CoruselSection/CoruselSection";
 import { services, unitFirst, unitSecond } from "../Data/Data.js";
 const Services = React.lazy(() => import("../Services/Services.jsx"));
 const Unit = React.lazy(() => import("../Article/Unit.jsx"));
@@ -31,7 +32,6 @@ export default function Home() {
         <Unit options={unitFirst} />
         <Unit options={unitSecond} />
       </React.Suspense>
-
       {isMobile && menu && <MobileMenu visible={menu} hundler={hundleClick} />}
     </>
   );

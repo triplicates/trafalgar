@@ -13,6 +13,10 @@ import {
 } from "./UnitElements.jsx";
 import { Title } from "$components/Styles/GlobalStyles.jsx";
 
+let propTypes = {
+  options: PropTypes.object.isRequired,
+};
+
 export default function Unit({ options }) {
   return (
     <UnitBlock>
@@ -46,6 +50,4 @@ export default function Unit({ options }) {
     </UnitBlock>
   );
 }
-Unit.propTypes = {
-  options: PropTypes.object.isRequired,
-};
+Unit.propTypes = propTypes;
