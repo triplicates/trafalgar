@@ -13,6 +13,11 @@ import { BrowserRouter as Router } from "react-router-dom";
 import MobileBtn from "../MobileBtn/MobileBtn.jsx";
 import PropTypes from "prop-types";
 
+let propTypes = {
+  isMobile: PropTypes.bool,
+  hundled: PropTypes.func,
+};
+
 export default function Header({ isMobile, hundler }) {
   return (
     <>
@@ -77,7 +82,4 @@ export default function Header({ isMobile, hundler }) {
   );
 }
 
-Header.propTypes = {
-  isMobile: PropTypes.bool,
-  hundled: PropTypes.func,
-};
+Header.propTypes = propTypes;
