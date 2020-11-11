@@ -37,6 +37,9 @@ export let CoruselRadio = styled.div`
   width: 14px;
   height: 14px;
   border-radius: 50%;
+  &:nth-child(1n + 2) {
+    margin-left: 6px;
+  }
   input[type="radio"] {
     appearance: none;
     opacity: 0;

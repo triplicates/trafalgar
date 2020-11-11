@@ -17,9 +17,7 @@ let propTypes = {
 export default function Corusel({ pictures }) {
   let [picture, setPicture] = useState(pictures),
     pictureRef = useRef(),
-    radioRef = useRef(),
-    nextBtnRef = useRef(),
-    prevBtnRef = useRef();
+    radioRef = useRef();
 
   let initRadio = () => {
     return pictures.map((el, index) => (
@@ -44,30 +42,6 @@ export default function Corusel({ pictures }) {
 
   // TODO FIX it
 
-  let slideToNext = () => {
-    let attr = pictureRef.current.getAttribute("src"),
-      index = pictures.indexOf(attr);
-    console.log(index);
-    console.log(pictures.length - 1);
-    if (index === pictures.length - 1) {
-      index = index - 1;
-    }
-    pictureRef.current.setAttribute("src", picture[index + 1]);
-  };
-
-  // TODO FIX it
-
-  let slideToPrev = () => {
-    let attr = pictureRef.current.getAttribute("src"),
-      index = pictures.indexOf(attr);
-    if (index <= 0) {
-      index = 0;
-    } else {
-      index = --index;
-    }
-    pictureRef.current.setAttribute("src", picture[index]);
-  };
-
   useEffect(() => {
     let coruselRadio = radioRef.current.children[0].children[0];
     coruselRadio.setAttribute("checked", "true");
@@ -79,7 +53,7 @@ export default function Corusel({ pictures }) {
         <CoruselPictures>
           <PictureWrapper>
             <picture>
-              <img ref={pictureRef} src={pictures[0]} alt="#" />
+              <img ref={pictureRef} src={pictures[0]} alt="corusel picture" />
             </picture>
           </PictureWrapper>
         </CoruselPictures>
