@@ -15,7 +15,7 @@ export default function CoruselSection() {
             "./assets/picture5.png",
             "./assets/picture4.png",
             "./assets/picture3.png",
-            "./assets/picture1.png",
+            "./assets/picture.png",
           ]}
         />
       </SectionWrapper>

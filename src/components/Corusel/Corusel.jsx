@@ -40,8 +40,6 @@ export default function Corusel({ pictures }) {
     pictureRef.current.setAttribute("src", picture[attr]);
   };
 
-  // TODO FIX it
-
   useEffect(() => {
     let coruselRadio = radioRef.current.children[0].children[0];
     coruselRadio.setAttribute("checked", "true");
@@ -58,9 +56,9 @@ export default function Corusel({ pictures }) {
           </PictureWrapper>
         </CoruselPictures>
         <CoruselNav>
-          <CoruselBtn hundleClick={slideToPrev} reverse={true} />
+          <CoruselBtn reverse={true} />
           <CoruselRadios ref={radioRef}>{initRadio()}</CoruselRadios>
-          <CoruselBtn hundleClick={slideToNext} />
+          <CoruselBtn />
         </CoruselNav>
       </CoruselBox>
     </>
