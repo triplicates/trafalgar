@@ -1,85 +1,38 @@
 import React from "react";
-import {
-  Header as Head,
-  HeaderContainer,
-  Logo,
-  Nav,
-  Ul,
-  Li,
-  Link,
-} from "./HeaderElements.jsx";
-import logo from "../../assets/logo.png";
-import { BrowserRouter as Router } from "react-router-dom";
-import MobileBtn from "../MobileBtn/MobileBtn.jsx";
-import PropTypes from "prop-types";
-
-let propTypes = {
-  isMobile: PropTypes.bool,
-  hundled: PropTypes.func,
-};
-
-export default function Header({ isMobile, hundler }) {
+import { MobileContext } from "../Context/MobileContext";
+import "./header.scss";
+import Logo from "img/logo.png";
+export default function Header() {
   return (
     <>
-      <Head>
-        <HeaderContainer>
-          <Logo>
-            <source srcSet={logo} />
-            <img src={logo} alt="trafalgar logo" />
-          </Logo>
-          <Router>
-            <Nav>
-              <Ul>
-                <Li>
-                  <Link
-                    primary={window.location.pathname === "/" ? 1 : 0}
-                    to="/"
-                  >
-                    Home
-                  </Link>
-                </Li>
-                <Li>
-                  <Link
-                    to="#"
-                    primary={window.location.pathname === "/doctor" ? 1 : 0}
-                  >
-                    Find a doctor
-                  </Link>
-                </Li>
-                <Li>
-                  <Link
-                    to="#"
-                    primary={window.location.pathname === "/apps" ? 1 : 0}
-                  >
-                    Apps
-                  </Link>
-                </Li>
-                <Li>
-                  <Link
-                    to="#"
-                    primary={
-                      window.location.pathname === "/testimonials" ? 1 : 0
-                    }
-                  >
-                    Testimonials
-                  </Link>
-                </Li>
-                <Li>
-                  <Link
-                    to="#"
-                    primary={window.location.pathname === "/about" ? 1 : 0}
-                  >
-                    About us
-                  </Link>
-                </Li>
-              </Ul>
-            </Nav>
-          </Router>
-          {isMobile ? <MobileBtn show={hundler} /> : ""}
-        </HeaderContainer>
-      </Head>
+      <MobileContext.Consumer>
+        {(isMobile) => {
+          if (isMobile) {
+            return (
+              <>
+                <header className="header">
+                  <div className="header__inner">
+                    <picture>
+                      <img src={Logo} alt="trafalgar logo" />
+                    </picture>
+                  </div>
+                </header>
+              </>
+            );
+          }
+          return (
+            <>
+              <header className="header">
+                <div className="header__inner">
+                  <picture>
+                    <img src={Logo} alt="trafalgar logo" />
+                  </picture>
+                </div>
+              </header>
+            </>
+          );
+        }}
+      </MobileContext.Consumer>
     </>
   );
 }
-
-Header.propTypes = propTypes;
