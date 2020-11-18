@@ -1,13 +1,7 @@
 import React from "react";
-import Home from "../Home/Home.jsx";
-import { Main } from "../Styles/GlobalStyles.jsx";
-import "../Styles/remove.css";
-import "../Styles/variables.css";
-
+import Home from "components/Home/Home";
+import "src/styles/variables.css";
+import "src/styles/remove.css";
 export default function App() {
-  return (
-    <Main>
-      <Home />
-    </Main>
-  );
+  return <Home />;
 }
