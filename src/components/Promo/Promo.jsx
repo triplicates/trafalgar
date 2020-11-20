@@ -4,7 +4,7 @@ export default function Promo() {
   return (
     <section>
       <div>
-        <p>promo</p>
+        <p>Section Promo</p>
       </div>
     </section>
   );

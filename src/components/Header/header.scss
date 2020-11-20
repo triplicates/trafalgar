@@ -1,12 +1,38 @@
+@import "src/styles/mixins.scss";
+
 .header {
   width: 100%;
   height: 42px;
-  &__inner {
+  &_margin-top_56 {
+    margin-top: 56px;
+  }
+  &__navigation {
+    animation: HeaderShow 0.4s forwards;
+    height: 100%;
+  }
+  &__navigation-ul {
+    height: inherit;
     display: flex;
     align-items: center;
-    width: 1170px;
-    max-width: calc(100% - 40px);
-    margin: 0 auto;
-    height: 100%;
+  }
+  &__navigation-list:nth-child(1n + 1) {
+    margin-right: 40px;
+  }
+  &__navigation-link {
+    @extend %mulish-regular;
+    text-decoration: none;
+    color: var(--headerLinks);
+    font-size: 18px;
+  }
+  &__navigation-link_marked {
+    font-weight: bold;
+  }
+}
+@keyframes HeaderShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
