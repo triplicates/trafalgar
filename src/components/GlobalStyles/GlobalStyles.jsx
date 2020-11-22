@@ -14,3 +14,8 @@ export let Button = styled.button`
   background: transparent;
   border: none;
 `;
+
+export let Navigation = styled.nav``;
+
+export let Ul = styled.ul``;
+export let List = styled.li``;
