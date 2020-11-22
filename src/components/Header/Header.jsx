@@ -1,97 +1,61 @@
 import React from "react";
-import MenuButton from "components/MenuButton/MenuButton";
-import { MobileContext } from "../Context/MobileContext";
-import "./header.scss";
+import { Link } from "react-router-dom";
+import {
+  Header as HeaderComponent,
+  HeaderWrapper,
+  HeaderNavigation,
+  HeaderUl,
+  HeaderList,
+} from "./HeaderElements";
 import Logo from "img/logo.png";
-import { HeaderWrapper } from "./HeaderElements";
+import { MobileContext } from "components/Context/MobileContext";
+import MenuButton from "components/MenuButton/MenuButton";
+import DataLinks from "components/Data/HeaderLinks";
+
 export default function Header() {
+  const LINKS = DataLinks;
+
   return (
     <>
       <MobileContext.Consumer>
         {(isMobile) => {
           if (isMobile) {
             return (
-              <>
-                <header className="header header_margin-top_56">
-                  <HeaderWrapper>
-                    <picture className="header__logo">
-                      <img src={Logo} alt="trafalgar logo" />
-                    </picture>
-                    <MenuButton />
-                  </HeaderWrapper>
-                </header>
-              </>
-            );
-          }
-          return (
-            <>
-              <header className="header header_margin-top_56">
-                <HeaderWrapper>
+              <HeaderComponent>
+                <HeaderWrapper className="margin-top_56">
                   <picture className="header__logo">
                     <img src={Logo} alt="trafalgar logo" />
                   </picture>
-                  <nav className="header__navigation">
-                    <ul className="header__navigation-ul">
-                      <li className="header__navigation-list">
-                        <a
-                          className={`header__navigation-link ${
-                            window.location.pathname === "/" &&
-                            "header__navigation-link_marked"
-                          }`}
-                          href="#"
-                        >
-                          Home
-                        </a>
-                      </li>
-                      <li className="header__navigation-list">
-                        <a
-                          className={`header__navigation-link ${
-                            window.location.pathname === "/find-a-doctor" &&
-                            "header__navigation-link_marked"
-                          }`}
-                          href="#"
-                        >
-                          Find a doctor
-                        </a>
-                      </li>
-                      <li className="header__navigation-list">
-                        <a
-                          className={`header__navigation-link ${
-                            window.location.pathname === "/apps" &&
-                            "header__navigation-link_marked"
-                          }`}
-                          href="#"
-                        >
-                          Apps
-                        </a>
-                      </li>
-                      <li className="header__navigation-list">
-                        <a
-                          className={`header__navigation-link ${
-                            window.location.pathname === "/testimonials" &&
-                            "header__navigation-link_marked"
-                          }`}
-                          href="#"
-                        >
-                          Testimonials
-                        </a>
-                      </li>
-                      <li className="header__navigation-list">
-                        <a
-                          className={`header__navigation-link ${
-                            window.location.pathname === "about-us" &&
-                            "header__navigation-link_marked"
-                          }`}
-                          href="#"
-                        >
-                          About us
-                        </a>
-                      </li>
-                    </ul>
-                  </nav>
+                  <MenuButton />
                 </HeaderWrapper>
-              </header>
-            </>
+              </HeaderComponent>
+            );
+          }
+          return (
+            <HeaderComponent>
+              <HeaderWrapper className="margin-top_56">
+                <picture className="header__logo">
+                  <img src={Logo} alt="trafalgar logo" />
+                </picture>
+                <HeaderNavigation>
+                  <HeaderUl>
+                    {LINKS.map((el) => {
+                      return (
+                        <HeaderList
+                          key={el.id}
+                          className={
+                            window.location.pathname === el.path &&
+                            "header__link_marked"
+                          }
+                        >
+                          <Link to={el.path}>{el.name}</Link>
+                        </HeaderList>
+                      );
+                    })}
+                  </HeaderUl>
+                </HeaderNavigation>
+              </HeaderWrapper>
+            </HeaderComponent>
           );
         }}
       </MobileContext.Consumer>
