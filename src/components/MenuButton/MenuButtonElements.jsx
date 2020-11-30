@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import { Button } from "../GlobalStyles/GlobalStyles";
+import { MenuButton } from "components/GlobalStyles/GlobalStyles";
 
 let AnimateShow = keyframes`
     from{
@@ -11,7 +11,7 @@ let AnimateShow = keyframes`
         transform: translateX(0);
     }
 `;
-export let Btn = styled(Button)`
+export let Btn = styled(MenuButton)`
   transition: transform 0.2s;
   animation: ${AnimateShow} 0.4s forwards;
 `;

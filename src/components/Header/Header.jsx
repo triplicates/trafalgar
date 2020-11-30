@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { MobileContext } from "components/Context/MobileContext";
 import {
   Header as HeaderComponent,
   HeaderWrapper,
@@ -7,13 +7,19 @@ import {
   HeaderUl,
   HeaderList,
 } from "./HeaderElements";
-import Logo from "img/logo.png";
-import { MobileContext } from "components/Context/MobileContext";
-import MenuButton from "components/MenuButton/MenuButton";
 import DataLinks from "components/Data/HeaderLinks";
+import Logo from "img/logo.png";
+import { Link } from "react-router-dom";
+import MenuButton from "components/MenuButton/MenuButton";
+import MobileMenu from "components/MobileMenu/MobileMenu";
 
 export default function Header() {
-  const LINKS = DataLinks;
+  const LINKS = DataLinks,
+    [isOpen, setIsOpen] = useState(false);
+
+  let controlMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <>
@@ -23,18 +29,19 @@ export default function Header() {
             return (
               <HeaderComponent>
                 <HeaderWrapper className="margin-top_56">
-                  <picture className="header__logo">
+                  <picture>
                     <img src={Logo} alt="trafalgar logo" />
                   </picture>
-                  <MenuButton />
+                  <MenuButton hundleClick={controlMenu} />
                 </HeaderWrapper>
+                {isOpen && <MobileMenu controlMenu={controlMenu} />}
               </HeaderComponent>
             );
           }
           return (
             <HeaderComponent>
               <HeaderWrapper className="margin-top_56">
-                <picture className="header__logo">
+                <picture>
                   <img src={Logo} alt="trafalgar logo" />
                 </picture>
                 <HeaderNavigation>

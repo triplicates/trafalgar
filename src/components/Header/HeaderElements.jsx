@@ -23,6 +23,7 @@ export let HeaderWrapper = styled(Wrapper)`
 `;
 
 export let HeaderNavigation = styled(NavigationGlobal)``;
+
 export let HeaderUl = styled(UlGlobal)`
   display: flex;
   align-items: center;

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { MobileContext } from "components/Context/MobileContext";
 import Header from "components/Header/Header";
 import Promo from "components/Promo/Promo";
-import { MobileContext } from "components/Context/MobileContext";
+import Services from "components/Services/Services";
 
 export default function Home() {
   let [isMobile, setIsMobile] = useState(false);
@@ -20,6 +21,8 @@ export default function Home() {
     <>
       <MobileContext.Provider value={isMobile}>
         <Header />
+        <Promo />
+        <Services />
       </MobileContext.Provider>
     </>
   );
