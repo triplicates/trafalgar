@@ -5,7 +5,7 @@ import Applications from "components/Applications/Applications";
 import { Switch, Route } from "react-router-dom";
 import "src/styles/app.css";
 
-export default App = () => {
+export default function App() {
   return (
     <>
       <Switch>
@@ -20,4 +20,4 @@ export default App = () => {
       </Switch>
     </>
   );
-};
+}

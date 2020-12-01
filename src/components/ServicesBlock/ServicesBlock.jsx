@@ -7,7 +7,7 @@ let propTypes = {
   serviceList: PropTypes.arrayOf("object").isRequired,
 };
 
-export default ServicesBlock = ({ serviceList }) => {
+export default function ServicesBlock({ serviceList }) {
   return (
     <Section>
       {serviceList.map((obj) => {
@@ -15,6 +15,6 @@ export default ServicesBlock = ({ serviceList }) => {
       })}
     </Section>
   );
-};
+}
 
 ServicesBlock.propTypes = propTypes;

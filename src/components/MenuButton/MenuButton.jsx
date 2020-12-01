@@ -1,7 +1,7 @@
 import React from "react";
 import { Btn } from "./MenuButtonElements";
 
-export default MenuButton = ({ hundleClick }) => {
+export default function MenuButton({ hundleClick }) {
   return (
     <Btn onClick={hundleClick}>
       <svg
@@ -21,4 +21,4 @@ export default MenuButton = ({ hundleClick }) => {
       </svg>
     </Btn>
   );
-};
+}

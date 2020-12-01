@@ -10,7 +10,7 @@ import {
   PromoPicture,
 } from "./PromoElements";
 
-export default Promo = () => {
+export default function Promo() {
   return (
     <PromoSection>
       <PromoWrapper>
@@ -30,4 +30,4 @@ export default Promo = () => {
       </PromoWrapper>
     </PromoSection>
   );
-};
+}

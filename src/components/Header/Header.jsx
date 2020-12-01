@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 import MenuButton from "components/MenuButton/MenuButton";
 import MobileMenu from "components/MobileMenu/MobileMenu";
 
-export default Header = () => {
+export default function Header() {
   const LINKS = DataLinks,
     [isOpen, setIsOpen] = useState(false);
 
@@ -68,4 +68,4 @@ export default Header = () => {
       </MobileContext.Consumer>
     </>
   );
-};
+}

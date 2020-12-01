@@ -8,6 +8,6 @@ let LoaderWrapper = styled.div`
   min-height: inherit;
 `;
 
-export default Loader = () => {
+export default function Loader() {
   return <LoaderWrapper></LoaderWrapper>;
-};
+}

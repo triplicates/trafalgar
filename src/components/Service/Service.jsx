@@ -14,7 +14,7 @@ let propTypes = {
   obj: PropTypes.object.isRequired,
 };
 
-export default Service = ({ obj }) => {
+export default function Service({ obj }) {
   let { img, alt, title, subtitle } = obj;
   return (
     <ServiceWrapper>
@@ -31,6 +31,6 @@ export default Service = ({ obj }) => {
       </ServiceInner>
     </ServiceWrapper>
   );
-};
+}
 
 Services.propTypes = propTypes;
