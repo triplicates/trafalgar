@@ -3,7 +3,7 @@ import { Menu, MenuWrapper, MenuLink, CloseButton } from "./MobileMenuElements";
 import { Navigation, Ul, List } from "components/GlobalStyles/GlobalStyles";
 import { BrowserRouter as Router } from "react-router-dom";
 
-export default function MobileMenu({ controlMenu }) {
+export default MobileMenu = ({ controlMenu }) => {
   let menuRef = React.useRef();
   let closeMenu = () => {
     menuRef.current.classList.add("menu_closed");
@@ -41,4 +41,4 @@ export default function MobileMenu({ controlMenu }) {
       </MenuWrapper>
     </Menu>
   );
-}
+};

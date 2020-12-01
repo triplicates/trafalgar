@@ -3,8 +3,9 @@ import { MobileContext } from "components/Context/MobileContext";
 import Header from "components/Header/Header";
 import Promo from "components/Promo/Promo";
 import Services from "components/Services/Services";
+import Corusel from "components/Corusel/Corusel";
 
-export default function Home() {
+export default Home = () => {
   let [isMobile, setIsMobile] = useState(false);
 
   (function () {
@@ -23,7 +24,8 @@ export default function Home() {
         <Header />
         <Promo />
         <Services />
+        <Corusel />
       </MobileContext.Provider>
     </>
   );
-}
+};

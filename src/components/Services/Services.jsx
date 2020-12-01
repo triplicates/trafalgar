@@ -8,7 +8,7 @@ import {
 import ServicesBlock from "components/ServicesBlock/ServicesBlock";
 import servicesList from "components/Data/Services";
 
-export default function Services() {
+export default Services = () => {
   return (
     <Section>
       <ServicesWrapper>
@@ -25,4 +25,4 @@ export default function Services() {
       </ServicesWrapper>
     </Section>
   );
-}
+};
