@@ -10,8 +10,8 @@ let propTypes = {
 export default function ServicesBlock({ serviceList }) {
   return (
     <Section>
-      {serviceList.map((obj) => {
-        return <Service key={obj.id} obj={obj} />;
+      {serviceList.map((objData) => {
+        return <Service key={objData.id} obj={objData} />;
       })}
     </Section>
   );

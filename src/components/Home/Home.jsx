@@ -3,9 +3,12 @@ import { MobileContext } from "components/Context/MobileContext";
 import Header from "components/Header/Header";
 import Promo from "components/Promo/Promo";
 import Services from "components/Services/Services";
+import Corusel from "components/Corusel/Corusel";
+import Pictures from "components/Data/Pictures";
 
 export default function Home() {
-  let [isMobile, setIsMobile] = useState(false);
+  let [isMobile, setIsMobile] = useState(false),
+    dataOfPictures = Pictures;
 
   (function () {
     window.addEventListener("load", () => {
@@ -18,12 +21,11 @@ export default function Home() {
   })();
 
   return (
-    <>
-      <MobileContext.Provider value={isMobile}>
-        <Header />
-        <Promo />
-        <Services />
-      </MobileContext.Provider>
-    </>
+    <MobileContext.Provider value={isMobile}>
+      <Header />
+      <Promo />
+      <Services />
+      <Corusel pictures={dataOfPictures} />
+    </MobileContext.Provider>
   );
 }

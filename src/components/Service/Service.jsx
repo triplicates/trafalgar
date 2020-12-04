@@ -7,8 +7,8 @@ import {
   ServiceTitle,
   ServiceSubtitle,
 } from "./ServiceElements.jsx";
-import PropTypes from "prop-types";
 import Services from "../Services/Services.jsx";
+import PropTypes from "prop-types";
 
 let propTypes = {
   obj: PropTypes.object.isRequired,
