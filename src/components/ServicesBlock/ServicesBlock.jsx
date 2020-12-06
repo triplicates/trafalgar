@@ -4,7 +4,7 @@ import Service from "components/Service/Service";
 import { ServicesBlock as Section } from "./ServicesBlockElements";
 
 let propTypes = {
-  serviceList: PropTypes.arrayOf("object").isRequired,
+  serviceList: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default function ServicesBlock({ serviceList }) {
