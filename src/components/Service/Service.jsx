@@ -10,10 +10,6 @@ import {
 import Services from "../Services/Services.jsx";
 import PropTypes from "prop-types";
 
-let propTypes = {
-  obj: PropTypes.object.isRequired,
-};
-
 export default function Service({ obj }) {
   let { img, alt, title, subtitle } = obj;
   return (
@@ -32,5 +28,3 @@ export default function Service({ obj }) {
     </ServiceWrapper>
   );
 }
-
-Services.propTypes = propTypes;
